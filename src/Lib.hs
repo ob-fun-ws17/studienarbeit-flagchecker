@@ -16,7 +16,7 @@ filterDirs :: [FilePath] -> IO [FilePath]
 filterDirs files = filterM doesDirectoryExist files
 
 wholeDirRecursive :: FilePath -> FilePath -> IO ()
-wholeDirRecursive src dst =
+wholeDirRecursive src dst = -- does not work right now ___ dst name needs to be generated from src name + dst path
   do
     files <- listDirectory src
     filtered <- filterM (fmap not . doesDirectoryExist) files
