@@ -2,16 +2,16 @@ name:                studienarbeit-flagchecker
 version:             0.1.0.0
 github:              "githubuser/studienarbeit-flagchecker"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2017 Author name here"
+author:              "Leon Kladnik"
+maintainer:          "lkladnik@hm.edu"
+copyright:           "2017 Leon Kladnik"
 
 extra-source-files:
 - README.md
 - ChangeLog.md
 
 # Metadata used when publishing your package
-synopsis:            Short description of your package
+synopsis:            Manages files and simplifies renaming large numbers.
 # category:            Web
 
 # To avoid duplicated efforts in documentation and dealing with the
