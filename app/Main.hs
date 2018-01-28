@@ -1,3 +1,4 @@
+-- | Main module of the app.
 module Main where
 
 import System.IO (hSetBuffering, BufferMode(NoBuffering), stdout)

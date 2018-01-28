@@ -1,4 +1,4 @@
--- | The lib of the project
+-- | The lib of the project. Most of the work is done here.
 module Lib where
 
 import System.Directory
@@ -6,8 +6,6 @@ import Data.List.Split
 import Control.Monad (filterM, when, forM_)
 import Control.Applicative((<$>))
 import Control.Exception(throw)
--- listDir :: FilePath -> IO [FilePath]
--- listDir path = listDirectory path
 
 -- | Extracts the file extension from a path.
 getEnding :: FilePath -> String
@@ -24,16 +22,6 @@ filterFileTyp ending files = filter ((== ending) . getEnding) files
 -- | Only returns a list of the directories.
 filterDirs :: [FilePath] -> IO [FilePath]
 filterDirs files = filterM doesDirectoryExist files
-
--- -- | Doesn't work right now. Should copy the whole directory recursive.
--- wholeDirRecursive :: FilePath -> FilePath -> IO ()
--- wholeDirRecursive src dst = -- does not work right now ___ dst name needs to be generated from src name + dst path
---   do
---     files <- listDirectory src
---     filtered <- filterM (fmap not . doesDirectoryExist) files
---     createDirectoryIfMissing True dst
---     mapM_ (`copyFile` dst) filtered
-
 
 -- | Copies the file to the specified location.
 copyFileToDst :: FilePath -> FilePath -> IO ()
@@ -58,7 +46,7 @@ copyFileToDst src dst =
 --       createDirectoryIfMissing True dstPath
 --       copyDirToDst srcPath dstPath
 
--- | Taken from StackOverflow. Copies a whole Dir. Target directory will be created.
+-- | Inspired by StackOverflow. Copies a whole Dir. Destination directory will be created.
 -- | Fails if the destination directory already exists.
 copyDir ::  FilePath -> FilePath -> IO ()
 copyDir src dst = do
@@ -77,7 +65,6 @@ copyDir src dst = do
     if isDirectory
       then copyDir srcPath dstPath
       else copyFile srcPath dstPath
-
   where
     doesFileOrDirectoryExist x = orM [doesDirectoryExist x, doesFileExist x]
     orM xs = or <$> sequence xs
