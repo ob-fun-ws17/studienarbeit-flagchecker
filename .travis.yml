@@ -14,7 +14,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  local_dir: $PROJECT_ROOT.stack-work/install/x86_64-linux/lts-10.0/8.2.2/doc/
+#  local_dir: $PROJECT_ROOT.stack-work/install/x86_64-linux/lts-10.0/8.2.2/doc/
   github_token: $GITHUB_TOKEN
   on:
     branch: master
