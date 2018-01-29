@@ -11,13 +11,14 @@ script:
   - stack build --fast --no-terminal
   - stack haddock --no-haddock-deps
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local_dir: .stack-work/install/x86_64-linux/lts-10.0/8.2.2/doc/
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   local_dir: .stack-work/install/x86_64-linux/lts-10.0/8.2.2/doc/
+#   github_token: $GITHUB_TOKEN
+#   on:
+#     branch: master
+
 #.stack-work/dist/x86_64-linux/Cabal-2.0.1.0/doc/html/studienarbeit-flagchecker/
 #.stack-work/install/x86_64-linux/lts-10.0/8.2.2/doc/
 cache:
