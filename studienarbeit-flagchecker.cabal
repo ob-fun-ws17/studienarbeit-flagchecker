@@ -1,0 +1,75 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 917cf2414de8fe9cdfdb1a7dd5040e49c4fbf4169be5274a112dc6714ec31137
+
+name:           studienarbeit-flagchecker
+version:        1.0.0.0
+synopsis:       Manages files and allows making multiple copies of the same file.
+description:    Please see the README on Github at <https://github.com/githubuser/studienarbeit-flagchecker#readme>
+homepage:       https://github.com/githubuser/studienarbeit-flagchecker#readme
+bug-reports:    https://github.com/githubuser/studienarbeit-flagchecker/issues
+author:         Leon Kladnik
+maintainer:     lkladnik@hm.edu
+copyright:      2017 Leon Kladnik
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/studienarbeit-flagchecker
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , split
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_studienarbeit_flagchecker
+  default-language: Haskell2010
+
+executable studienarbeit-flagchecker-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , split
+    , studienarbeit-flagchecker
+  other-modules:
+      Paths_studienarbeit_flagchecker
+  default-language: Haskell2010
+
+test-suite studienarbeit-flagchecker-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      src
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+     HUnit
+     , QuickCheck >=2
+     , base >=4.6 && <5.0
+     , studienarbeit-flagchecker
+     , directory
+     , split
+     , hspec
+  other-modules:
+      Lib
+      LibSpec
+      Paths_studienarbeit_flagchecker
+  default-language: Haskell2010
