@@ -14,9 +14,10 @@ deploy:
   provider: pages
   skip_cleanup: true
   local_dir: $PROJECT_ROOT/doc/html/studienarbeit-flagchecker-1.0.0.0
+  github_token: $GITHUB_TOKEN
   on:
     branch: master
-
+#/home/travis/build/ob-fun-ws17/studienarbeit-flagchecker/.stack-work
 cache:
   timeout: 2000
   directories:
