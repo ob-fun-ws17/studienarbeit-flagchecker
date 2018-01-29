@@ -9,15 +9,16 @@ install:
 script:
   - stack setup --no-terminal
   - stack build --fast --no-terminal
+  - stack haddock --no-haddock-deps
 
 deploy:
   provider: pages
   skip_cleanup: true
-  local_dir: $PROJECT_ROOT/doc/html/studienarbeit-flagchecker-1.0.0.0
+  local_dir: $PROJECT_ROOT/.stack-work/dist/5c8418a7/doc/html/studienarbeit-flagchecker
   github_token: $GITHUB_TOKEN
   on:
     branch: master
-#/home/travis/build/ob-fun-ws17/studienarbeit-flagchecker/.stack-work
+
 cache:
   timeout: 2000
   directories:
