@@ -10,14 +10,13 @@ script:
   - stack setup --no-terminal
   - stack build --fast --no-terminal
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: $HADDOCK_ROOT/doc/html/studienarbeit-flagchecker-1.0.0.0
-  on:
-    branch: master
-
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   local_dir: $HADDOCK_ROOT/doc/html/studienarbeit-flagchecker-1.0.0.0
+#   on:
+#     branch: master
+#
 cache:
   timeout: 2000
   directories:
